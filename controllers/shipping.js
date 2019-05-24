@@ -37,9 +37,9 @@ function getShippingRegionsById () {
         field
       })
     }
-      shippings = globalFunc.convertObjectValuesRecursive(shippings.dataValues, null, '')
+      // shippings = globalFunc.convertObjectValuesRecursive(shippings.dataValues, null, '')
 
-    return res.json(shippings).status(constants.NETWORK_CODES.HTTP_CREATED)
+    return res.json(shippings.dataValues.shippings).status(constants.NETWORK_CODES.HTTP_CREATED)
   }
   })
 }
