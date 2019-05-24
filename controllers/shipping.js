@@ -31,7 +31,7 @@ function getShippingRegionsById () {
     let shippings = await shippingService.getShippingRegionsById( parsedId)
 
     if (isEmpty(shippings)) {
-      return res.status(constants.NETWORK_CODES.HTTP_BAD_REQUEST).json({
+      return res.status(constants.NETWORK_CODES.HTTP_NOT_FOUND).json({
         code: globalFunc.getKeyByValue(constants.ERROR_CODES, constants.ERROR_CODES.USR_02),
         message: constants.ERROR_CODES.USR_02,
         field
@@ -41,7 +41,13 @@ function getShippingRegionsById () {
 
     return res.json(shippings.dataValues.shippings).status(constants.NETWORK_CODES.HTTP_CREATED)
   }
+  return res.status(constants.NETWORK_CODES.HTTP_BAD_REQUEST).json({
+    code: globalFunc.getKeyByValue(constants.ERROR_CODES, constants.ERROR_CODES.USR_09),
+    message: constants.ERROR_CODES.USR_09,
+    field
   })
+  })
+  
 }
 
 
