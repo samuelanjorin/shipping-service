@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import morgan from 'morgan'
 import logger from './utils/errors/errorlogger'
 import routeDependencies from './routes/routedependencies'
+
 // import redis from './config/redis'
 
 const app = express()
@@ -18,6 +19,7 @@ const port = process.env.RACS_PORT || 7004
 app.listen(port, () => {
   console.log(`Listening to port ${port}.......`)
 })
+
 
 process.on('uncaughtException', (ex) => {
   // logger.error(ex.message, ex)
