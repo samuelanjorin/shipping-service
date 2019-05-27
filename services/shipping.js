@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import db from '../models/index'
 import redisCache from '../utils/cache'
-import shippingRegion from '../models/shippingRegion';
 
 redisCache.addToCache()
 
