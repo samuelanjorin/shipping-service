@@ -1,3 +1,8 @@
 /node_modules
 .env
 logs
+node_modules
+.env
+logs
+.eslintrc
+index.html
