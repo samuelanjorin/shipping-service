@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import isEmpty from 'lodash.isempty'
 import shippingService from '../services/shipping'
 import asyncF from '../middlewares/async'
 import globalFunc from '../utils/globalfunc'
@@ -11,7 +10,7 @@ function getShippingRegions () {
   return asyncF(async (req, res) => {
     let value = await cache.checkCache(req.originalUrl)
     if(value !== null){
-      return res.json(value.data).status(constants.NETWORK_CODES.HTTP_SUCCESS)
+      return res.status(constants.NETWORK_CODES.HTTP_SUCCESS).json(value.data)
     }
     let shippingsRegions = await shippingService.getShippingRegions()
     if (isEmpty(shippingsRegions)) {
@@ -22,7 +21,7 @@ function getShippingRegions () {
       })
     }
     cache.addToCache(req.originalUrl, {data: shippingsRegions}, constants.CACHE_TYPES.hour)
-    return res.json(shippingsRegions).status(constants.NETWORK_CODES.HTTP_SUCCESS)
+    return res.status(constants.NETWORK_CODES.HTTP_SUCCESS).json(shippingsRegions)
  
   })
 }
@@ -31,7 +30,7 @@ function getShippingRegions () {
   return asyncF(async (req, res) => {
     let value = await cache.checkCache(req.originalUrl)
     if(value !== null){
-      return res.json(value.data).status(constants.NETWORK_CODES.HTTP_SUCCESS)
+      return res.status(constants.NETWORK_CODES.HTTP_SUCCESS).json(value.data)
     }
     const { shipping_id } = req.params;
     const parsedId = parseInt(shipping_id, 10);
@@ -46,7 +45,7 @@ function getShippingRegions () {
     }
     
    cache.addToCache(req.originalUrl, {data: shippingsRegions.shippings}, constants.CACHE_TYPES.hour)
-  return res.json(shippingsRegions.shippings).status(constants.NETWORK_CODES.HTTP_SUCCESS)
+  return res.status(constants.NETWORK_CODES.HTTP_SUCCESS).json(shippingsRegions.shippings)
 
    }
    return res.status(constants.NETWORK_CODES.HTTP_BAD_REQUEST).json({
