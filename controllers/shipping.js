@@ -4,6 +4,7 @@ import asyncF from '../middlewares/async'
 import globalFunc from '../utils/globalfunc'
 import constants from '../constants/index'
 import cache from '../utils/cache'
+import isEmpty from 'lodash.isempty'
 
 let field = 'shipping_id'
 function getShippingRegions () {
