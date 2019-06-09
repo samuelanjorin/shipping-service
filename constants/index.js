@@ -7,7 +7,10 @@ const ERROR_CODES = Object.freeze({
     USR_06: 'This is an invalid phone number.',
     USR_07: 'This is too long <FIELD NAME>.',
     USR_08: 'This is an invalid Credit Card.',
-    USR_09: 'The Shipping Region ID is not number.',
+    SHP_01: 'The Shipping Region ID is not number.',
+    SHP_02: 'The Shipping ID is not number.',
+    SHP_03: 'The Shipping Region ID does not exit',
+    SHP_04: 'The Shipping ID does not exit',
     AUT_01: 'Authorization code is empty.',
     AUT_02: 'Access Unauthorized.',
     NOAUTH: 'NoAuth'

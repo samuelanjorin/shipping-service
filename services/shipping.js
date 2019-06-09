@@ -13,6 +13,11 @@ async function getShippingRegionsById (id) {
 }]
 )
 }
+async function getShippingById (id) {
+  return await findOne(shipping, { 
+    shipping_id: id }
+)
+}
  async function getShippingRegions() {
   return await shipping_region.findAll();
 
@@ -33,5 +38,6 @@ async function findOne(model, option, include = []) {
 
 export default {
   getShippingRegions,
-  getShippingRegionsById
+  getShippingRegionsById,
+  getShippingById
 }
