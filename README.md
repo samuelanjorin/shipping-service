@@ -10,3 +10,10 @@ It handles the below customer features:
 
 1. Get Shipping Regions: http://3.130.189.86:8000/shipping-service/v1/api/shippings/regions
 2. Get Region By ID: http://3.130.189.86:8000/shipping-service/v1/api/shippings/regions/3
+
+# Microservice Architecture Documentation: https://drive.google.com/file/d/1d8kSf8xTtmmtyWEhn56nqC4CubaOv8Eg/view?usp=sharing
+
+
+
+
+
